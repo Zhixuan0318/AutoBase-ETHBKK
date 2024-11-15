@@ -1,0 +1,29 @@
+main.home-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main.home-layout > div.selector {
+    padding: 1rem;
+
+    display: flex;
+    gap: 1rem;
+
+    border: 1px solid var(--text);
+    border-radius: 10px;
+}
+
+#verified {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.5rem;
+}
+
+#verified > h4 {
+    color: var(--secondary);
+
+    cursor: pointer;
+    text-decoration: underline;
+}
