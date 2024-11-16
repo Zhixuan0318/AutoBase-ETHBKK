@@ -1,0 +1,419 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "shop",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "products",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "inputs": [],
+        "name": "ELowValue",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "EmptyArgs",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "EmptySource",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "NoInlineSecrets",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "NotARobot",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "NotAnOwner",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "OnlyRouterCanFulfill",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "requestId",
+                "type": "bytes32"
+            }
+        ],
+        "name": "UnexpectedRequestID",
+        "type": "error"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "orderId",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "enum Warehouse.Activity",
+                "name": "activity",
+                "type": "uint8"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "verifier",
+                "type": "address"
+            }
+        ],
+        "name": "ActivityVerifier",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "orderId",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "enum Warehouse.Activity",
+                "name": "activity",
+                "type": "uint8"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "robotId",
+                "type": "uint256"
+            }
+        ],
+        "name": "AssingRobot",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "id",
+                "type": "bytes32"
+            }
+        ],
+        "name": "RequestFulfilled",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "orderId",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "requestId",
+                "type": "uint256"
+            }
+        ],
+        "name": "RequestRobotId",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "id",
+                "type": "bytes32"
+            }
+        ],
+        "name": "RequestSent",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "requestId",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "bytes",
+                "name": "response",
+                "type": "bytes"
+            },
+            {
+                "indexed": false,
+                "internalType": "bytes",
+                "name": "err",
+                "type": "bytes"
+            }
+        ],
+        "name": "Response",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "orderId",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "enum Enums.OrderStatus",
+                "name": "status",
+                "type": "uint8"
+            }
+        ],
+        "name": "WarehouseActivity",
+        "type": "event"
+    },
+    {
+        "inputs": [],
+        "name": "Entropy",
+        "outputs": [
+            {
+                "internalType": "contract IEntropy",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint64",
+                "name": "sequence",
+                "type": "uint64"
+            },
+            {
+                "internalType": "address",
+                "name": "provider",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "randomNumber",
+                "type": "bytes32"
+            }
+        ],
+        "name": "_entropyCallback",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "orderId",
+                "type": "string"
+            },
+            {
+                "internalType": "address",
+                "name": "verifier",
+                "type": "address"
+            }
+        ],
+        "name": "deliverOrder",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "requestId",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "bytes",
+                "name": "response",
+                "type": "bytes"
+            },
+            {
+                "internalType": "bytes",
+                "name": "err",
+                "type": "bytes"
+            }
+        ],
+        "name": "handleOracleFulfillment",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "orderId",
+                "type": "string"
+            },
+            {
+                "internalType": "address",
+                "name": "verifier",
+                "type": "address"
+            }
+        ],
+        "name": "packOrder",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "orderId",
+                "type": "string"
+            },
+            {
+                "internalType": "address",
+                "name": "verifier",
+                "type": "address"
+            }
+        ],
+        "name": "pickOrder",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "orderId",
+                "type": "string"
+            }
+        ],
+        "name": "processOrder",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "userRandomNumber",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "string",
+                "name": "orderId",
+                "type": "string"
+            },
+            {
+                "internalType": "enum Warehouse.Activity",
+                "name": "activityType",
+                "type": "uint8"
+            }
+        ],
+        "name": "requestRandomNumber",
+        "outputs": [
+            {
+                "internalType": "uint64",
+                "name": "",
+                "type": "uint64"
+            }
+        ],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "",
+                "type": "bytes32"
+            }
+        ],
+        "name": "responses",
+        "outputs": [
+            {
+                "internalType": "bytes",
+                "name": "",
+                "type": "bytes"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "source",
+                "type": "string"
+            },
+            {
+                "internalType": "string[]",
+                "name": "args",
+                "type": "string[]"
+            },
+            {
+                "internalType": "bytes[]",
+                "name": "bytesArgs",
+                "type": "bytes[]"
+            }
+        ],
+        "name": "sendRequest",
+        "outputs": [
+            {
+                "internalType": "bytes32",
+                "name": "requestId",
+                "type": "bytes32"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "robot",
+                "type": "address"
+            }
+        ],
+        "name": "setRobot",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]
