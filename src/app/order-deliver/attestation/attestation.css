@@ -1,0 +1,263 @@
+main.attestation {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    grid-template-rows: repeat(3, fit-content);
+    gap: 1.5rem;
+}
+
+main.attestation > div.order-data {
+    margin-bottom: 1.5rem;
+
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    justify-items: center;
+}
+
+main.attestation > div.order-data > h5 {
+    margin-left: 1rem;
+
+    align-self: flex-start;
+
+    border-radius: 5px !important;
+}
+
+main.attestation > div.order-data > div {
+    width: 100%;
+    height: 100%;
+
+    padding: 1rem 1.25rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 0.5rem;
+
+    border: 1px solid var(--secondary);
+}
+
+main.attestation > div.order-data > div.order-id {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+main.attestation > div.order-data > div.order-id > h2 {
+    text-decoration: underline;
+}
+
+main.attestation > div.order-data > div.receipt {
+    border-left-color: transparent;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+main.attestation > div.order-data > div.receipt > a {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+
+    text-decoration: underline;
+    text-wrap: nowrap;
+}
+
+main.attestation > div.order-data > div > h4 {
+    width: 100%;
+
+    text-align: left;
+    color: var(--secondary);
+}
+
+main.attestation > section.evidence {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+
+    display: flex;
+    column-gap: 5rem;
+}
+
+main.attestation > section.evidence > div {
+    width: 22rem;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.25rem;
+}
+
+main.attestation > section.evidence > div > h2 {
+    text-wrap: nowrap;
+}
+
+main.attestation > section.evidence > div > div.schema {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+
+    text-wrap: nowrap;
+}
+
+main.attestation > section.evidence > div > div.schema > h5:nth-child(2) {
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
+main.attestation > section.evidence > div > div.schema > img {
+    cursor: pointer;
+}
+
+main.attestation > section.evidence > div > .upload-image {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75rem;
+}
+
+main.attestation > section.evidence > div > .upload-image > label.file-upload {
+    position: relative;
+    padding: 4rem 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 0.5rem;
+
+    text-wrap: nowrap;
+
+    border: 2px dashed #d3d3d3;
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+main.attestation > section.evidence > div > .upload-image > label.file-upload > input[type='file'] {
+    display: none;
+}
+
+main.attestation > section.evidence > div > .upload-image > div.cid {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+main.attestation > section.evidence > div > .upload-image > div.cid > a {
+    color: var(--secondary);
+}
+
+main.attestation > section.evidence > div > .upload-image > div.cid > img {
+    cursor: pointer;
+}
+
+main.attestation > section.evidence > div > .upload-image > h4 {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+main.attestation > section.evidence > div > div.success {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+main.attestation > section.evidence > div > div.success > img {
+    height: 1.75rem;
+    width: auto;
+}
+
+main.attestation > section.evidence > div > div.success > h4 {
+    font-weight: 500;
+}
+
+main.attestation > section.evidence > div > div.info {
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+/**/
+
+main.attestation > .records {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+
+    border-left: 1px solid var(--secondary);
+}
+
+main.attestation > .records > section:last-child {
+    border-top: 1px solid var(--secondary);
+}
+
+main.attestation > .records > * > h4 {
+    margin-bottom: 0.5rem;
+}
+
+main.attestation > .records > * {
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.25rem;
+}
+
+main.attestation .log {
+    position: relative;
+
+    margin-right: 0.4rem;
+    padding: 1rem;
+
+    display: grid;
+    grid-template-columns: 1fr 20px;
+    grid-template-rows: 1fr auto;
+    align-items: center;
+    gap: 1rem;
+
+    border: 1px solid var(--secondary);
+    border-radius: 5px;
+}
+
+main.attestation .log > .status {
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+}
+
+main.attestation .log > a {
+    width: auto;
+
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    justify-self: flex-end;
+}
+
+main.attestation .log > a > img {
+    width: 1.25rem;
+    height: auto;
+}
+
+main.attestation .log .data {
+    width: max-content;
+
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+main.attestation .log .data > h6 {
+    text-wrap: nowrap;
+    color: var(--secondary);
+
+    cursor: pointer;
+}
+
+main.attestation .log .data > img {
+    cursor: pointer;
+}
