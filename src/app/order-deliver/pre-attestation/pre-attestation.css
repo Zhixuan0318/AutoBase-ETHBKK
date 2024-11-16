@@ -1,0 +1,38 @@
+main.pre-attestation {
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 3rem;
+}
+
+main.pre-attestation > img {
+    transform: translateY(1.5rem);
+}
+
+main.pre-attestation > section.verifiers {
+    display: flex;
+    column-gap: 2rem;
+}
+
+main.pre-attestation > section.verifiers > div {
+    width: 25dvw;
+    padding: 2.5rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 1.25rem;
+
+    border: 1px solid var(--text);
+    border-radius: 10px;
+}
+
+main.pre-attestation > .info {
+    transform: translateY(-1.5rem);
+
+    display: flex;
+    column-gap: 0.25rem;
+}
